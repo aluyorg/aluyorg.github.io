@@ -1,28 +1,232 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+
+<head>
+<title>HOW-TO GUIDE (GOOGLE FIT) </title>
+<style type="text/css">
+#code {
+	color: #060;
+}
+#code {
+	color: #060;
+}
+#code {
+	color: #090;
+}
+#code {
+	color: #060;
+}
+</style>
+</head>
+
+<body>
+<p><strong>HOW-TO GUIDE (GOOGLE FIT)</strong></p>
+<p><strong>Google Fit</strong> is a health-tracking platform developed by <a href="https://en.wikipedia.org/wiki/Google" title="Google">Google</a>.</p>
+<p><strong>The Google Fit REST API </strong>enables you to store and access user data in the fitness store from apps on any platform.</p>
+<p><strong>Prequisites:</strong></p>
+<p><strong>A Gmail Account:</strong> Goto www.gmail.com to get one</p>
+<p><strong>Getting Started</strong></p>
+<h2 id="request_an_oauth_20_client_id">Getting an OAuth 2.0 client ID from Google</h2>
+<ol>
+  <li>Go to the <a data-category="getKey" data-action="linkClick" data-label="body" href="https://console.developers.google.com/flows/enableapi?apiid=fitness" target="_blank">Google API Console</a>.</li>
+</ol>
+<p><img src="screens/Capture1.JPG" width="523" height="255" /></p>
+<p>Click on continue to create the Project. This usually takes a few seconds.</p>
+<p>2. On the screen that follows,</p>
+<p><img src="screens/Capture2.JPG" width="402" height="158" /></p>
+<p>Click on the &quot;Go to credentials Google&quot;</p>
+<p>3. Next, &quot;Under what API are you using?&quot;, Select &quot;Fitness API&quot;. </p>
+<blockquote>
+  <p>Under &quot;Where will you be calling the API from?&quot; since we working with the REST API, select &quot;Web browser (Java script)&quot;</p>
+  <p>Under &quot;What data will you be accessing?&quot;, Select the &quot;user data&quot; radio button.</p>
+  <p>Finally, click the what credentials do I need button.</p>
+</blockquote>
+<p><img src="screens/Capture3.JPG" width="541" height="456" /></p>
+<p>4. Under &quot;name&quot;, Enter a name for the client ID.</p>
+<p>			Under &quot;Restrictions&quot;, Paste the URL of the project site(s) you will be working with under &quot;Authorized Java script origins&quot;. </p>
+<p>Also, under &quot;Authorized redirect URLs&quot; choose a path in your website users will be directed to after being authentication by Google.</p>
+<p>Finally, click &quot;Create client ID&quot; button</p>
+<p>. <img src="screens/Capture4.JPG" width="519" height="507" /></p>
+<p>5. Next, Enter yout Google email (Gmail) address under &quot;Email address&quot;.</p>
+<p>Enter your product name in the &quot;Product name shown to users&quot;</p>
+<p><img src="screens/Capture5.JPG" width="662" height="294" /></p>
+<p>6. Next, This should show your Client ID, you can download it or copy it for later use</p>
+<p><img src="screens/Capture6.JPG" width="648" height="207" /></p>
+<p>7. Next, you need to verify ownsership of your domain. This a very easy task. Click the &quot;Add domain&quot; button to begin.</p>
+<p><img src="screens/Capture7.JPG" width="487" height="220" /></p>
+<p>8. Next, Under &quot;Domain&quot;, type in your domain name and click on the &quot;ADD DOMAIN&quot; button.</p>
+<p><img src="screens/Capture8.JPG" width="534" height="293" /></p>
+<p>9. Next, Click the &quot;TAKE ME THERE&quot; button</p>
+<p> <img src="screens/Capture9.JPG" width="488" height="186" /></p>
+<p>10. Next, Google authenticates you on Gmail, Enter your email and password to proceed.</p>
+<p><img src="screens/Capture10.JPG" width="504" height="522" /></p>
+<p>11. Next, Click the Add a propery button</p>
+<p><img src="screens/Capture11.JPG" width="1332" height="320" /></p>
+<p>&nbsp;</p>
+<p>12. Next, Enter your domain name and click &quot;Continue&quot;</p>
+<p><img src="screens/Capture12.JPG" width="1166" height="262" /></p>
+<p>13. Next, This is the actual domain verifcation step.</p>
+<p>You are required to download the HTML Verification file from the link in &quot;No. 1&quot;</p>
+<p>Upload the file to the web directory your domain is hosted on.</p>
+<p>Finally, click the &quot;Verify&quot; button</p>
+<p><img src="screens/Capture13.JPG" width="979" height="544" /></p>
+<p>14. Next, This should give you a confirmation that your domain has been verifed.</p>
+<p><img src="screens/Capture14.JPG" width="903" height="238" /></p>
+<p>15. Next, We will try and familarize ourselves with The OAuth Playground. As the name implies, it is a playground in the literal sense of it. </p>
+<p>We are allowed to goof around a little to gain mastery of the REST API</p>
+<p>First, Goto The OAuth Playground by following the link  <a href="https://developers.google.com/oauthplayground/">OAuth Playground</a>.</p>
+<p>Under &quot;Select and authorize APIs&quot;, Go to Fitness v1 and tick all the items under it</p>
+<p>Next, click &quot;Authorize APIs button&quot;, you would be authenticated by Google, after which you will click &quot;Allow&quot; to grant access to your Google Account</p>
+<p><img src="screens/Capture15.JPG" width="499" height="371" /></p>
+<p>&nbsp;</p>
+<p>If successful, you should get a response that looks like this:</p>
+<p><img src="screens/CaptureN1.JPG" width="874" height="169" /></p>
+<p>16. Next, Your Authorization code should have been generated at this point</p>
+<p>Next, Click the &quot;Exchange authorization code for tokens&quot; button. It should automaticall generate the &quot;Refresh Token&quot; and &quot;Access Token&quot;</p>
+<p>You can click the &quot;Refresh access token button&quot; after the token expires or Tick the &quot;Auto-refresh the token before it expires&quot; checkbox</p>
+<p><img src="screens/CaptureN2.JPG" width="491" height="330" /></p>
+<p>17. The Next step in working with the Google Fit API is <a href="https://developers.google.com/fit/rest/v1/reference/users/dataSources/create" target="_blank">creating a data source</a>.  A data source represents a unique source of sensor data. </p>
+<p>You use data sources to insert fitness data into the fitness store, and you can retrieve fitness data inserted by a particular data source. </p>
+<p>According to the documentation, datasource requires a userid.</p>
+<p>Now, we will try to send a request our datasources. We are yet to create any datasource so ofcoure we don't expect to get any usefull result. This is just a test of concept</p>
+<p>In the &quot;HTTP Method&quot; make sure it is set to get. Under &quot;Request URI&quot;, past &quot;https://www.googleapis.com/fitness/v1/users/me/dataSources&quot;</p>
+<p>Click the &quot;Send the request&quot; button.</p>
+<p><img src="screens/CaptureN3.JPG" width="503" height="332" /></p>
+<p>We should now get a response that looks like this. As we can see datasource is empty as expected.</p>
+<p><img src="screens/Capture20.JPG" alt="" width="757" height="427" /></p>
+<p>18. Now, what next? You probably guessed right. We have to add our data source!</p>
+<p>First, Under &quot;HTTP Method&quot;, change it to &quot;POST&quot;. The request URI remains the same. </p>
+<p>Click the &quot;Enter the request &quot; and paste the following code.</p>
+<p id="code"> {<br />
+&quot;dataStreamName&quot;: &quot;aluyorg&quot;,<br />
+&quot;name&quot;: &quot;demo device&quot;,<br />
+&quot;type&quot;: &quot;derived&quot;,<br />
+&quot;application&quot;: {<br />
+&quot;detailsUrl&quot;: &quot;https://aluyorg.github.io/&quot;,<br />
+&quot;name&quot;: &quot;Aluyorg Demo Fitness App&quot;,<br />
+&quot;version&quot;: &quot;1&quot;<br />
+},<br />
+&quot;dataType&quot;: {<br />
+&quot;field&quot;: [<br />
+{<br />
+&quot;name&quot;: &quot;steps&quot;,<br />
+&quot;format&quot;: &quot;integer&quot;<br />
+}<br />
+],<br />
+&quot;name&quot;: &quot;com.google.step_count.delta&quot;<br />
+},<br />
+&quot;device&quot;: {<br />
+&quot;manufacturer&quot;: &quot;Aluyorg&quot;,<br />
+&quot;model&quot;: &quot;alpha&quot;,<br />
+&quot;type&quot;: &quot;tablet&quot;,<br />
+&quot;uid&quot;: &quot;1000001&quot;,<br />
+&quot;version&quot;: &quot;1.0&quot;<br />
+}<br />
+}</p>
+<p>For more information and on the JSON code abovem you can read the doucmentation <a href="https://developers.google.com/fit/rest/v1/reference/users/dataSources">here:</a></p>
+<p><img src="screens/Capture22.JPG" alt="" width="1096" height="529" /></p>
+<p>Next, Click the &quot;Send the request&quot; button. You sould get a response confirming the datascource was added successfully. </p>
+<p>PS: You cannot add thesame datasource more than once</p>
+<p><img src="screens/Capture21.JPG" alt="" width="491" height="203" /></p>
+<p>Below is sample of the response after the datascource has been added successfully </p>
+<p><span id="code">HTTP/1.1 200 OK<br />
+  Content-length: 584<br />
+  X-xss-protection: 1; mode=block<br />
+  X-content-type-options: nosniff<br />
+  Transfer-encoding: chunked<br />
+  Expires: Mon, 01 Jan 1990 00:00:00 GMT<br />
+  Vary: Origin, X-Origin<br />
+  Server: GSE<br />
+  Etag: &quot;kfiSq1UovTDyFXsTQCLfQZW40Zc/PP3h_XdpQ7mQvb4oOd-h8WXvRr4&quot;<br />
+  Pragma: no-cache<br />
+  Cache-control: no-cache, no-store, max-age=0, must-revalidate<br />
+  Date: Sun, 26 Feb 2017 10:43:43 GMT<br />
+  X-frame-options: SAMEORIGIN<br />
+  Alt-svc: quic=&quot;:443&quot;; ma=2592000; v=&quot;35,34&quot;<br />
+  Content-type: application/json; charset=UTF-8<br />
+  -content-encoding: gzip<br />
+  {<br />
+&quot;name&quot;: &quot;demo device&quot;, <br />
+&quot;dataStreamName&quot;: &quot;aluyorg&quot;, <br />
+&quot;dataType&quot;: {<br />
+&quot;field&quot;: [<br />
+{<br />
+&quot;name&quot;: &quot;steps&quot;, <br />
+&quot;format&quot;: &quot;integer&quot;<br />
+}<br />
+], <br />
+&quot;name&quot;: &quot;com.google.step_count.delta&quot;<br />
+}, <br />
+&quot;dataQualityStandard&quot;: [], <br />
+&quot;application&quot;: {<br />
+&quot;version&quot;: &quot;1&quot;, <br />
+&quot;name&quot;: &quot;Aluyorg Demo Fitness App&quot;, <br />
+&quot;detailsUrl&quot;: &quot;https://aluyorg.github.io/&quot;<br />
+}, <br />
+&quot;device&quot;: {<br />
+&quot;model&quot;: &quot;alpha&quot;, <br />
+&quot;version&quot;: &quot;1.0&quot;, <br />
+&quot;type&quot;: &quot;tablet&quot;, <br />
+&quot;uid&quot;: &quot;1000001&quot;, <br />
+&quot;manufacturer&quot;: &quot;Aluyorg&quot;<br />
+}, <br />
+&quot;dataStreamId&quot;: &quot;derived:com.google.step_count.delta:407408718192:Aluyorg:alpha:1000001:aluyorg&quot;, <br />
+&quot;type&quot;: &quot;derived&quot;<br />
+}</span><br />
+</p>
+<p>19. Next, we can repeat step 17 to see out datasource which we just added. The response should look like this</p>
+<p id="code">GET /fitness/v1/users/me/dataSources HTTP/1.1<br />
+  Host: www.googleapis.com<br />
+  Content-length: 0<br />
+  Authorization: Bearer ya29.Glv-AzglhOFiOQoNL_W99RW8qzlAvkl1ZpOfibAnFf4j-PuVJrnCplV17_FFFY22WgFtvZWnOSrlgOMg4QE2_ezDd0iNEFDdzOvmiwqbdHe9eO0mOCM4pyBD-znx<br />
+  HTTP/1.1 200 OK<br />
+  Content-length: 664<br />
+  X-xss-protection: 1; mode=block<br />
+  Content-location: https://www.googleapis.com/fitness/v1/users/me/dataSources<br />
+  X-content-type-options: nosniff<br />
+  Transfer-encoding: chunked<br />
+  Expires: Sun, 26 Feb 2017 10:49:00 GMT<br />
+  Vary: Origin, X-Origin<br />
+  Server: GSE<br />
+  Etag: &quot;kfiSq1UovTDyFXsTQCLfQZW40Zc/j_zDF3OcL_199bXoS1pL24Fl_MY&quot;<br />
+  Cache-control: private, max-age=0, must-revalidate, no-transform<br />
+  Date: Sun, 26 Feb 2017 10:49:00 GMT<br />
+  X-frame-options: SAMEORIGIN<br />
+  Alt-svc: quic=&quot;:443&quot;; ma=2592000; v=&quot;35,34&quot;<br />
+  Content-type: application/json; charset=UTF-8<br />
+  -content-encoding: gzip<br />
+  {<br />
+&quot;dataSource&quot;: [<br />
+{<br />
+&quot;name&quot;: &quot;demo device&quot;, <br />
+&quot;dataStreamName&quot;: &quot;aluyorg&quot;, <br />
+&quot;dataType&quot;: {<br />
+&quot;field&quot;: [<br />
+{<br />
+&quot;name&quot;: &quot;steps&quot;, <br />
+&quot;format&quot;: &quot;integer&quot;<br />
+}<br />
+], <br />
+&quot;name&quot;: &quot;com.google.step_count.delta&quot;<br />
+}, <br />
+&quot;dataQualityStandard&quot;: [], <br />
+&quot;application&quot;: {<br />
+&quot;version&quot;: &quot;1&quot;, <br />
+&quot;name&quot;: &quot;Aluyorg Demo Fitness App&quot;, <br />
+&quot;detailsUrl&quot;: &quot;https://aluyorg.github.io/&quot;<br />
+}, <br />
+&quot;device&quot;: {<br />
+&quot;model&quot;: &quot;alpha&quot;, <br />
+&quot;version&quot;: &quot;1.0&quot;, <br />
+&quot;type&quot;: &quot;tablet&quot;, <br />
+&quot;uid&quot;: &quot;1000001&quot;, <br />
+&quot;manufacturer&quot;: &quot;Aluyorg&quot;<br />
+}, <br />
+&quot;dataStreamId&quot;: &quot;derived:com.google.step_count.delta:407408718192:Aluyorg:alpha:1000001:aluyorg&quot;, <br />
+&quot;type&quot;: &quot;derived&quot;<br />
+}<br />
+]<br />
+}</p>
+<p>As can be seen. We now have data sources :)</p>
+<p>&nbsp;</p>
+</body>
 </html>
